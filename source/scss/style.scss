@@ -183,3 +183,34 @@
   background-color: #FFFFFF;
   height: 1825px;
 }
+
+/*
+  footer
+*/
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  margin-top: 24px;
+
+  &::before {
+    content: "";
+    display: block;
+    background: #FFFFFF;
+    border-radius: 0 0 24px 24px;
+    width: 100%;
+    height: 24px;
+    position: absolute;
+    bottom: -1170px;
+    left: 0;
+  }
+
+  &__title {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.7);
+  }
+}
