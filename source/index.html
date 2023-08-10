@@ -6,7 +6,7 @@
     <meta name="google" content="notranslate">
     <meta name="format-detection" content="telephone=no">
 
-    <title>DL Academy</title>
+    <title>Корзина</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -15,26 +15,41 @@
       docElement.className = docElement.className.replace(/\bno-js\b/, '') + ' js';
     </script>
 
-    <!-- Favicon -->
-
-    <!-- build:css -->
     <link href="css/style.min.css" rel="stylesheet">
-    <!-- endbuild -->
   </head>
   <body>
-    <div class="wrapper">
-      <main class="content">
-        <div class="coming-soon">
-          <h1 class="coming-soon__title">
-            <span>A</span>
-            <span>T</span>
-            <span>X</span>
-          </h1>
+    <header class="header container">
+      <div class="header__nav">
+        <button class="header__button" type="button">
+          <span class="header__line"></span>
+        </button>
+        <a class="header__logo" href="/">Товары и точка</a>
+      </div>
+      <div class="header__search">
+        <input class="header__input" type="search" placeholder="Я ищу...">
+        <button class="header__searchButton"></button>
+      </div>
+      <div class="header__iconBlock">
+        <div class="header__icon">
+          <a class="header__link" href="/">
+            <span class="header__link--profile"></span>
+            Профиль
+          </a>
         </div>
-      </main>
-      @@include('blocks/footer.html')
-    </div>
+        <div class="header__icon">
+          <a class="header__link" href="/">
+            <span class="header__link--basket"></span>
+            Корзина
+          </a>
+        </div>
+      </div>
+    </header>
+    <main class="main">
 
+    </main>
+    <footer class="footer container">
+      <p class="footer__title">© 2022  ООО «Товары и точка»</p>
+    </footer>
     <script src="js/app.js" defer></script>
   </body>
 </html>

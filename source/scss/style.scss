@@ -1,5 +1,4 @@
 @import "_variables.base";
-@import "_mixins";
 
 /*
   Import vendor libraries
@@ -9,52 +8,178 @@
 /*
   Import utils classes and base styles
 */
-@import "_utils";
 @import "_base";
+@import "fonts";
 
 /*
   Import all other blocks
 */
+
 @import "_blocks/container";
-@import "_blocks/footer";
 
 /*
-  Ниже пример подключения других блоков
-
-  Каждый новый файл должен отвечать за конкретный блок в терминах БЭМ
-  (https://ru.bem.info/methodology/key-concepts/#%D0%B1%D0%BB%D0%BE%D0%BA)
-
-  Для именования селекторов давайте придерживаться стиля two dashes
-  (https://ru.bem.info/methodology/naming-convention/#%D1%81%D1%82%D0%B8%D0%BB%D1%8C-two-dashes)
-  block-name__element-name--modificator
+  header
 */
 
-/*
-  Код ниже нужно удалить, он добавлен просто для примера
-  Не стал выносить в отдельный файл, но если бы блок coming-soon действительно был бы нужен,
-  то он должен был бы быть в файле _blocks/coming-soon.scss
-*/
-
-.coming-soon {
-  color: $color-text;
+.header {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  min-height: calc(100vh - 100px);
-  margin: auto;
-  padding: 0 5vw;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 44px;
 
-  &__title {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 25vw;
-    font-weight: 400;
-    margin: 0 auto;
-    text-transform: uppercase;
+  &::after {
+    content: '';
+    display: block;
     width: 100%;
+    height: 24px;
+    border-radius: 24px 24px 0 0;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    background-color: #FFFFFF;
   }
+
+  &__nav {
+    width: 170px;
+    display: flex;
+    margin-right: 32px;
+  }
+
+  &__logo {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 24px;
+    color: #FFFFFF;
+    width: 106px;
+  }
+
+  &__button {
+    border: 1px solid rgba(255,255,255,.4);
+    border-radius: 8px;
+    padding: 21px 9px;
+    margin-right: 16px;
+    background: 0 0;
+    width: 48px;
+    height: 48px;
+  }
+
+  &__line {
+    width: 28px;
+    height: 4px;
+    position: relative;
+    display: block;
+    background: #fff;
+    border-radius: 4px;
+
+    &::before {
+      top: -10px;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      display: block;
+      background: #fff;
+      border-radius: 4px;
+    }
+
+    &::after {
+      bottom: -10px;
+      content: '';
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      display: block;
+      background: #fff;
+      border-radius: 4px;
+    }
+  }
+
+  &__search {
+    position: relative;
+    width: 100%;
+    margin-right: 32px;
+  }
+
+  &__input {
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    padding: 10px 52px 14px 20px;
+    margin: 0;
+    border: none;
+    border-radius: 36px;
+    background: rgba(255,255,255,.2);
+    cursor: pointer;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__searchButton {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-image: url(../img/Search.svg);
+    width: 20px;
+    height: 21px;
+    opacity: .5;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: opacity .3s ease 0s;
+  }
+
+  &__iconBlock {
+    display: flex;
+    gap: 40px;
+  }
+
+  &__icon {
+    position: relative;
+  }
+
+  &__link {
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #FFFFFF;
+    display: block;
+
+    &--profile {
+      background-image: url(../img/profile.svg);
+      background-repeat: no-repeat;
+      width: 19px;
+      height: 20px;
+      display: block;
+      position: relative;
+      margin: 0 auto 6px;
+    }
+
+    &--basket {
+      background-image: url(../img/basket.svg);
+      background-repeat: no-repeat;
+      width: 27px;
+      height: 23px;
+      display: block;
+      margin: 0 auto 6px;
+      position: relative;
+    }
+  }
+}
+
+/*
+  main
+*/
+
+.main {
+  display: block;
+  background-color: #FFFFFF;
+  height: 1825px;
 }
