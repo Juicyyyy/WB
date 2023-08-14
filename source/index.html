@@ -6,7 +6,7 @@
     <meta name="google" content="notranslate">
     <meta name="format-detection" content="telephone=no">
 
-    <title>Корзина</title>
+    <title>Товары и точка</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
 
@@ -19,36 +19,223 @@
   </head>
   <body>
     <header class="header container">
-      <div class="header__nav">
-        <button class="header__button" type="button">
-          <span class="header__line"></span>
-        </button>
-        <a class="header__logo" href="/">Товары и точка</a>
-      </div>
-      <div class="header__search">
-        <input class="header__input" type="search" placeholder="Я ищу...">
-        <button class="header__searchButton"></button>
-      </div>
-      <div class="header__iconBlock">
-        <div class="header__icon">
-          <a class="header__link" href="/">
-            <span class="header__link--profile"></span>
-            Профиль
-          </a>
+      <div class="header__wrapper">
+        <div class="header__nav">
+          <button class="header__button" type="button">
+            <span class="header__line"></span>
+          </button>
+          <a class="header__logo" href="/">Товары и точка</a>
         </div>
-        <div class="header__icon">
-          <a class="header__link" href="/">
-            <span class="header__link--basket"></span>
-            Корзина
-          </a>
+        <div class="header__search">
+          <input class="header__input" type="search" placeholder="Я ищу...">
+          <button class="header__searchButton"></button>
+        </div>
+        <div class="header__iconBlock">
+          <div class="header__icon">
+            <a class="header__link" href="/">
+              <span class="header__link-profile"></span>
+              Профиль
+            </a>
+          </div>
+          <div class="header__icon">
+            <a class="header__link" href="/">
+              <span class="header__link-basket"></span>
+              Корзина
+            </a>
+          </div>
         </div>
       </div>
     </header>
     <main class="main">
-
+      <div class="main__display container">
+        <div class="main__wrapper">
+          <div class="basket">
+            <div class="basket__product">
+              <h1 class="basket__title">Корзина</h1>
+              <div class="basket__wrapper">
+                <div class="basket__wrapperButton borderCheckbox">
+                  <div class="basket__wrapperCheckbox">
+                    <input class="basket__input" id="Choose all" type="checkbox" name="Choose all" checked />
+                    <label class="basket__label" for="Choose all">Выбрать все</label>
+                  </div>
+                  <button class="buttonHide"></button>
+                </div>
+                <div class="basket__wrapperList">
+                  @@include('blocks/product.html', {
+                    "src": "./img/t-shirt.jpg",
+                    "name": "Футболка UZcotton мужская",
+                    "characteristic": "Цвет: белый&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Размер: 56",
+                    "provider": "OOO Вайлдберриз",
+                    "quantity": "Осталось 2 шт.",
+                    "newPrice": "522",
+                    "oldPrice": "1051",
+                    "id": "t-shirt",
+                    "for": "t-shirt"
+                  })
+                  @@include('blocks/product.html', {
+                    "src": "./img/case.jpg",
+                    "name": "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
+                    "characteristic": "Цвет: прозрачный",
+                    "provider": "OOO Мегапрофстиль",
+                    "quantity": " ",
+                    "newPrice": "2&thinsp;100&thinsp;047",
+                    "oldPrice": "2 300 047",
+                    "newPriceFontSize": "newPriceFontSize",
+                    "id": "case",
+                    "for": "case"
+                  })
+                  @@include('blocks/product.html', {
+                    "src": "./img/pencils.jpg",
+                    "name": "Карандаши цветные Faber-Castell &quot;Замок&quot;, набор 24 цвета, заточенные, шестигранные, Faber-Castell",
+                    "characteristic": " ",
+                    "provider": "OOO Вайлдберриз",
+                    "quantity": "Осталось 2 шт.",
+                    "newPrice": "494",
+                    "oldPrice": "950",
+                    "id": "pencils",
+                    "for": "pencils"
+                  })
+                </div>
+              </div>
+            </div>
+            <div class="absent">
+              <div class="absent__wrapper">
+                <p class="absent__title">Отсутствуют · 3 товара</p>
+                <button class="buttonHide"></button>
+              </div>
+              <div class="absent__product">
+                @@include('blocks/product-item.html', {
+                  "src": "./img/t-shirt.jpg",
+                  "name": "Футболка UZcotton мужская",
+                  "characteristic": "Цвет: белый&nbsp;&nbsp;&nbsp;&nbsp;Размер: 56",
+                })
+                @@include('blocks/product-item.html', {
+                  "src": "./img/case.jpg",
+                  "name": "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
+                  "characteristic": "Цвет: прозрачный",
+                })
+                @@include('blocks/product-item.html', {
+                  "src": "./img/pencils.jpg",
+                  "name": "Карандаши цветные Faber-Castell &quot;Замок&quot;, набор 24 цвета, заточенные, шестигранные, Faber-Castell",
+                  "characteristic": " ",
+                })
+              </div>
+            </div>
+            <div class="delivery">
+              <div class="delivery__header">
+                <h2 class="delivery__title">Способ доставки</h2>
+                <button class="buttonChange">Изменить</button>
+              </div>
+              <div class="delivery__content">
+                <div class="delivery__address">
+                  <span class="delivery__text">Пункт выдачи</span>
+                  <div class="delivery__address-wrapper">
+                    <span class="delivery__textClient">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                    <span class="delivery__textRating"> 4.99&nbsp;&nbsp;Ежедневно с 10 до 21 </span>
+                  </div>
+                </div>
+                <div class="delivery__price">
+                  <span class="delivery__text">Стоимость доставки</span>
+                  <span class="delivery__textClient"> Бесплатно</span>
+                </div>
+                <div class="delivery__date">
+                  <span class="delivery__text">5—6 февраля</span>
+                  <div class="delivery__img"></div>
+                </div>
+                <div class="delivery__date">
+                  <span class="delivery__text">7—8 февраля</span>
+                  <div class="delivery__product"></div>
+                </div>
+                <div class="delivery__priceShipping">
+                  <span class="priceShipping-icon"></span>
+                  <span class="delivery__priceShipping-text">Обратная доставка товаров на склад при отказе — <span class="deliveryColorText">бесплатно</span></span>
+                </div>
+              </div>
+            </div>
+            <div class="payment">
+              <div class="payment__header">
+                <h2 class="payment__title">Способ оплаты</h2>
+                <button class="buttonChange marginButtonChange">Изменить</button>
+              </div>
+              <p class="payment__card">1234 56•• •••• 1234&nbsp;&nbsp;&nbsp;01/30</p>
+              <p class="payment__text">Спишем оплату с карты при получении</p>
+            </div>
+            <div class="recipient">
+              <h2 class="recipient__title">Получатель</h2>
+              <form class="recipient__form">
+                <div class="recipient__wrapper">
+                  <input class="recipient__input inputWidth" placeholder="Имя" type="text"/>
+                  <input class="recipient__input inputWidth" placeholder="Фамилия" type="text"/>
+                </div>
+                <div class="recipient__wrapper">
+                  <input class="recipient__input" placeholder="Почта" type="text"/>
+                  <div class="recipient__wrapper-phone">
+                    <label class="recipient__label" for="phone">Телефон</label>
+                    <input class="recipient__input" id="phone" type="text"/>
+                  </div>
+                  <div class="recipient__wrapper-custom">
+                    <input class="recipient__input" placeholder="ИНН" type="text"/>
+                    <span class="recipient__span">Для таможенного оформления</span>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="summary">
+          <div class="summary__header">
+            <h2 class="summary__title">Итого</h2>
+            <span class="summary__title">2 101 063<span class="summary__title-unit"> сом</span></span>
+          </div>
+          <div class="summary__info">
+            <div class="summary__info-price">
+              <span class="summary__text">203 товара</span>
+              <span class="summary__text">2 302 048 сом</span>
+            </div>
+            <div class="summary__info-sale">
+              <span class="summary__text">Скидка</span>
+              <span class="summary__text">−200 985 сом</span>
+            </div>
+            <div class="summary__info-delivery">
+              <span class="summary__text">Доставка</span>
+              <span class="summary__text">Бесплатно</span>
+            </div>
+          </div>
+          <div class="summary__delivery">
+            <div class="summary__wrapper">
+              <span class="summary__subtitle">Доставка в пункт выдачи</span>
+              <button class="summary__btnChange"></button>
+            </div>
+            <span class="summary__span">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+            <span class="summary__span colorTextPink">5-8 фев</span>
+          </div>
+          <div class="summary__deliveryFree">
+            <span class="priceShipping-icon"></span>
+            <span class="summary__span">Обратная доставка товаров на склад при отказе — <span class="deliveryColorText">бесплатно</span></span>
+          </div>
+          <div class="summary__payment">
+            <div class="summary__wrapper">
+              <span class="summary__subtitle">Оплата картой</span>
+              <button class="summary__btnChange"></button>
+            </div>
+            <span class="summary__span summary__card">1234 12•• •••• 1234</span>
+          </div>
+          <div class="summary__checkbox">
+            <div class="summary__checkbox-wrapper">
+              <input class="summary__input" id="payment" type="checkbox"/>
+              <label class="summary__label" for="payment">Списать оплату сразу</label>
+            </div>
+            <span class="summary__span">Спишем оплату с карты при получении</span>
+          </div>
+          <button class="summary__button">Заказать</button>
+          <div class="summary__agreement">
+            <span class="summary__span">Соглашаюсь <span class="borderBottom">с правилами пользования торговой площадкой</span> и <span class="borderBottom">возврата</span></span>
+          </div>
+        </div>
+      </div>
     </main>
-    <footer class="footer container">
-      <p class="footer__title">© 2022  ООО «Товары и точка»</p>
+    <footer class="footer">
+      <p class="footer__title">© 2022  OOO «Товары и точка»</p>
     </footer>
     <script src="js/app.js" defer></script>
   </body>

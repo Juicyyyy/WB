@@ -1,0 +1,33 @@
+<div class="basket__list">
+  <div class="basket__wrapperCheckbox marginCheckbox">
+    <input class="basket__input" id="@@id" type="checkbox" checked />
+    <label class="basket__label" for="@@for"></label>
+  </div>
+  <div class="basket__list-item">
+    <div class="basket__list-info">
+      <img class="basket__list-img" src="@@src" alt="t-shirt" width="72" height="96">
+      <div class="basket__list-text">
+        <p class="basket__list-name">@@name</p>
+        <p class="basket__list-characteristic">@@characteristic</p>
+        <p class="basket__list-stock">Коледино WB</p>
+        <p class="basket__list-provider">@@provider <span class="iconAttention"></span></p>
+      </div>
+      <div class="basket__list-count">
+        <div class="count">
+          <button class="count__btnMinus" type="button"></button>
+          <input class="count__number" type="text" maxlength="2" min="1" value="1">
+          <button class="count__btnPlus" type="button"></button>
+        </div>
+        <p class="quantity">@@quantity</p>
+        <div class="icon">
+          <button class="icon__like"></button>
+          <button class="icon__delete"></button>
+        </div>
+      </div>
+      <div class="basket__list-price">
+        <p class="basket__list-newPrice @@newPriceFontSize">@@newPrice <span class="basket__list-unit">сом</span></p>
+        <p class="basket__list-oldPrice">@@oldPrice сом</p>
+      </div>
+    </div>
+  </div>
+</div>
