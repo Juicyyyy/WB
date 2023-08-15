@@ -1,13 +1,16 @@
 <div class="absent__list">
   <div class="absent__list-info paddingProduct marginProduct">
     <div class="absent__list-wrapper">
-      <img class="absent__list-img colorImg" src="@@src" alt="t-shirt" width="72" height="96">
+      <picture>
+        <source srcset="@@src320" media="(max-width: 1023px)" width="80" height="106">
+        <img class="absent__list-img colorImg" src="@@src" alt="t-shirt" width="72" height="96">
+      </picture>
        <div class="absent__list-text">
          <p class="absent__list-name colorText">@@name</p>
          <p class="absent__list-characteristic colorText">@@characteristic</p>
      </div>
      </div>
-      <div class="icon marginIcon">
+      <div class="icon marginIcon mobileIcon">
         <button class="icon__like"></button>
         <button class="icon__delete"></button>
       </div>

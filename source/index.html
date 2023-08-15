@@ -63,6 +63,7 @@
                 <div class="basket__wrapperList">
                   @@include('blocks/product.html', {
                     "src": "./img/t-shirt.jpg",
+                    "src320": "./img/t-shirt_320.jpg",
                     "name": "Футболка UZcotton мужская",
                     "characteristic": "Цвет: белый&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Размер: 56",
                     "provider": "OOO Вайлдберриз",
@@ -74,6 +75,7 @@
                   })
                   @@include('blocks/product.html', {
                     "src": "./img/case.jpg",
+                    "src320": "./img/case_320.jpg",
                     "name": "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
                     "characteristic": "Цвет: прозрачный",
                     "provider": "OOO Мегапрофстиль",
@@ -86,6 +88,7 @@
                   })
                   @@include('blocks/product.html', {
                     "src": "./img/pencils.jpg",
+                    "src320": "./img/pencils_320.jpg",
                     "name": "Карандаши цветные Faber-Castell &quot;Замок&quot;, набор 24 цвета, заточенные, шестигранные, Faber-Castell",
                     "characteristic": " ",
                     "provider": "OOO Вайлдберриз",
@@ -106,16 +109,19 @@
               <div class="absent__product">
                 @@include('blocks/product-item.html', {
                   "src": "./img/t-shirt.jpg",
+                  "src320": "./img/t-shirt_320.jpg",
                   "name": "Футболка UZcotton мужская",
                   "characteristic": "Цвет: белый&nbsp;&nbsp;&nbsp;&nbsp;Размер: 56",
                 })
                 @@include('blocks/product-item.html', {
                   "src": "./img/case.jpg",
+                  "src320": "./img/case_320.jpg",
                   "name": "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
                   "characteristic": "Цвет: прозрачный",
                 })
                 @@include('blocks/product-item.html', {
                   "src": "./img/pencils.jpg",
+                  "src320": "./img/pencils_320.jpg",
                   "name": "Карандаши цветные Faber-Castell &quot;Замок&quot;, набор 24 цвета, заточенные, шестигранные, Faber-Castell",
                   "characteristic": " ",
                 })
@@ -147,7 +153,7 @@
                   <div class="delivery__product"></div>
                 </div>
                 <div class="delivery__priceShipping">
-                  <span class="priceShipping-icon"></span>
+                  <span class="priceShipping-icon sizeIcon"></span>
                   <span class="delivery__priceShipping-text">Обратная доставка товаров на склад при отказе — <span class="deliveryColorText">бесплатно</span></span>
                 </div>
               </div>
@@ -211,7 +217,7 @@
           </div>
           <div class="summary__deliveryFree">
             <span class="priceShipping-icon"></span>
-            <span class="summary__span">Обратная доставка товаров на склад при отказе — <span class="deliveryColorText">бесплатно</span></span>
+            <span class="summary__span">Обратная доставка товаров <span class="transferLine">на склад при отказе — <span class="deliveryColorText">бесплатно</span></span></span>
           </div>
           <div class="summary__payment">
             <div class="summary__wrapper">
@@ -229,7 +235,7 @@
           </div>
           <button class="summary__button">Заказать</button>
           <div class="summary__agreement">
-            <span class="summary__span">Соглашаюсь <span class="borderBottom">с правилами пользования торговой площадкой</span> и <span class="borderBottom">возврата</span></span>
+            <span class="summary__span widthAgreement">Соглашаюсь <span class="borderBottom">с правилами пользования торговой площадкой</span> и <span class="borderBottom">возврата</span></span>
           </div>
         </div>
       </div>
@@ -237,6 +243,23 @@
     <footer class="footer">
       <p class="footer__title">© 2022  OOO «Товары и точка»</p>
     </footer>
+    <div class="mobileMenu">
+      <a class="mobileMenu__link" href="/">
+        <span class="mobileMenu__link-home"></span>
+      </a>
+      <a class="mobileMenu__link" href="/">
+        <span class="mobileMenu__link-catalog"></span>
+      </a>
+      <a class="mobileMenu__link" href="/">
+        <span class="mobileMenu__link-basket"></span>
+      </a>
+      <a class="mobileMenu__link" href="/">
+        <span class="mobileMenu__link-favorites"></span>
+      </a>
+      <a class="mobileMenu__link" href="/">
+        <span class="mobileMenu__link-profile"></span>
+      </a>
+    </div>
     <script src="js/app.js" defer></script>
   </body>
 </html>

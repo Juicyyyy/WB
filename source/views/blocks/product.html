@@ -1,11 +1,14 @@
 <div class="basket__list">
-  <div class="basket__wrapperCheckbox marginCheckbox">
+  <div class="basket__wrapperCheckbox marginCheckbox mobileCheckbox">
     <input class="basket__input" id="@@id" type="checkbox" checked />
     <label class="basket__label" for="@@for"></label>
   </div>
   <div class="basket__list-item">
     <div class="basket__list-info">
-      <img class="basket__list-img" src="@@src" alt="t-shirt" width="72" height="96">
+      <picture>
+        <source srcset="@@src320" media="(max-width: 1023px)" width="80" height="106">
+        <img class="basket__list-img" src="@@src" alt="t-shirt" width="72" height="96">
+      </picture>
       <div class="basket__list-text">
         <p class="basket__list-name">@@name</p>
         <p class="basket__list-characteristic">@@characteristic</p>
