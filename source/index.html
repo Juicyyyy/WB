@@ -58,7 +58,10 @@
                     <input class="basket__input" id="Choose all" type="checkbox" name="Choose all" checked />
                     <label class="basket__label" for="Choose all">Выбрать все</label>
                   </div>
-                  <button class="buttonHide"></button>
+                  <div class="basket__summaryText">
+                    <p class="basket__text">3 товара · 2 100 063 сом</p>
+                  </div>
+                  <button class="buttonHide hideBasket"></button>
                 </div>
                 <div class="basket__wrapperList">
                   @@include('blocks/product.html', {
@@ -71,7 +74,8 @@
                     "newPrice": "522",
                     "oldPrice": "1051",
                     "id": "t-shirt",
-                    "for": "t-shirt"
+                    "for": "t-shirt",
+                    "classProvider": "providerWB"
                   })
                   @@include('blocks/product.html', {
                     "src": "./img/case.jpg",
@@ -84,7 +88,8 @@
                     "oldPrice": "2 300 047",
                     "newPriceFontSize": "newPriceFontSize",
                     "id": "case",
-                    "for": "case"
+                    "for": "case",
+                    "classProvider": "providerM"
                   })
                   @@include('blocks/product.html', {
                     "src": "./img/pencils.jpg",
@@ -96,7 +101,8 @@
                     "newPrice": "494",
                     "oldPrice": "950",
                     "id": "pencils",
-                    "for": "pencils"
+                    "for": "pencils",
+                    "classProvider": "providerWB"
                   })
                 </div>
               </div>
@@ -104,7 +110,7 @@
             <div class="absent">
               <div class="absent__wrapper">
                 <p class="absent__title">Отсутствуют · 3 товара</p>
-                <button class="buttonHide"></button>
+                <button class="buttonHide hideAbsent"></button>
               </div>
               <div class="absent__product">
                 @@include('blocks/product-item.html', {
@@ -261,5 +267,6 @@
       </a>
     </div>
     <script src="js/app.js" defer></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

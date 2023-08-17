@@ -337,6 +337,7 @@
   &__wrapperButton {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__wrapperCheckbox {
@@ -414,10 +415,21 @@
       padding-bottom: 0;
     }
 
-    &-unit {
+    &-unit{
       font-size: 16px;
       line-height: 24px;
     }
+  }
+
+  &__summaryText {
+    display: none;
+    padding-bottom: 14px;
+  }
+
+  &__text {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
   }
 
   &__list-item {
@@ -437,6 +449,7 @@
 
   &__list-img {
     margin-right: 17px;
+    cursor: pointer;
 
     @media (max-width: 1023px) {
       margin-right: 16px;
@@ -464,6 +477,7 @@
     line-height: 24px;
     font-weight: 400;
     margin-bottom: 5px;
+    cursor: pointer;
 
     @media (max-width: 1023px) {
       font-size: 14px;
@@ -552,6 +566,73 @@
     text-decoration: line-through;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
     width: max-content;
+    cursor: pointer;
+  }
+
+  &__hoverPrice {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 11px 16px 13px 16px;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    z-index: 100;
+    opacity: 0;
+    margin-top: 55px;
+    margin-left: 8px;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 8px;
+    }
+
+    &-title {
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 400;
+      color: #A0A0A4;
+      width: 142px;
+    }
+
+    &-text {
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 400;
+      width: 57px;
+      text-align: end;
+    }
+  }
+
+  &__hoverProvider {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 11px 16px 13px 16px;
+    height: fit-content;
+    width: fit-content;
+    position: absolute;
+    z-index: 100;
+
+    &-title {
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 700;
+    }
+
+    &-text {
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 400;
+      width: 248px;
+    }
   }
 }
 
@@ -569,6 +650,7 @@
   border: none;
   width: 20px;
   height: 20px;
+  transition: .3s ease;
 }
 
 .borderCheckbox {
@@ -599,28 +681,11 @@
     width: 24px;
     height: 24px;
     position: relative;
+    background-image: url(../img/Plus.svg);
 
-    &::after {
-      content: '';
-      width: 10px;
-      height: 2px;
-      background-color: #242424;
-      border-radius: 4px;
-      display: block;
-      left: calc(50% - 6px);
-      position: absolute;
-    }
-
-    &::before {
-      content: '';
-      transform: rotate(-90deg);
-      width: 10px;
-      height: 2px;
-      background-color: #242424;
-      border-radius: 4px;
-      display: block;
-      left: calc(50% - 6px);
-      position: absolute;
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
     }
   }
 
@@ -639,20 +704,11 @@
     width: 24px;
     height: 24px;
     position: relative;
+    background-image: url(../img/Minus.svg);
 
-    &::after {
-      content: '';
-      width: 10px;
-      height: 2px;
-      background-color: #242424;
-      border-radius: 4px;
-      display: block;
-      left: calc(50% - 6px);
-      position: absolute;
-
-      @media (max-width: 1023px) {
-        left: 50%;
-      }
+    &:disabled {
+      cursor: default;
+      opacity: 0.5;
     }
   }
 }
@@ -676,6 +732,8 @@
   justify-content: right;
   gap: 18px;
   margin-right: 14px;
+  opacity: 0;
+  transition: .5s ease;
 
   @media (max-width: 1023px) {
     margin: 0;
@@ -697,6 +755,7 @@
 
     &:hover {
       opacity: 1;
+      background-image: url(../img/hoverLike.svg);
     }
   }
 
@@ -715,8 +774,17 @@
 
     &:hover {
       opacity: 1;
+      background-image: url(../img/hoverBasket.svg);
     }
   }
+}
+
+.basket__list:hover .icon {
+  opacity: 1;
+}
+
+.absent__list:hover .icon {
+  opacity: 1;
 }
 
 .newPriceFontSize {
@@ -743,6 +811,7 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 10px;
     padding-bottom: 18px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -800,6 +869,7 @@
 
   &__list-img {
     margin-right: 17px;
+    cursor: pointer;
   }
 
   &__list-text {
@@ -1031,6 +1101,23 @@
       margin-bottom: 0;
     }
   }
+
+  &__hover {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    padding: 11px 16px 13px 16px;
+    height: fit-content;
+    width: 288px;
+    position: absolute;
+    z-index: 100;
+
+    &-text {
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 400;
+    }
+  }
 }
 
 .priceShipping-icon {
@@ -1064,6 +1151,7 @@
 .deliveryColorText {
   color: #0CB477;
   border-bottom: 1px dashed rgba(12, 180, 119, 0.2);
+  cursor: pointer;
 }
 
 .buttonChange {
@@ -1074,6 +1162,11 @@
   line-height: 24px;
   color: #CB11AB;
   margin-top: 5px;
+  transition: .3s ease;
+
+  &:hover {
+    color: #e313bf;
+  }
 
   @media (max-width: 1023px) {
     margin: 0;
@@ -1542,7 +1635,7 @@
   }
 }
 
-.iconAttention {
+.providerWB, .providerM {
   display: inline-block;
   position: relative;
   background-image: url(../img/attention.svg);
@@ -1552,6 +1645,11 @@
   width: 20px;
   height: 20px;
   cursor: pointer;
+}
+
+.basket__list-oldPrice:hover + .basket__hoverPrice {
+  display: flex;
+  opacity: 1;
 }
 
 /*

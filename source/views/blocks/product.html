@@ -1,6 +1,6 @@
 <div class="basket__list">
   <div class="basket__wrapperCheckbox marginCheckbox mobileCheckbox">
-    <input class="basket__input" id="@@id" type="checkbox" checked />
+    <input class="basket__input input-js" id="@@id" type="checkbox" checked />
     <label class="basket__label" for="@@for"></label>
   </div>
   <div class="basket__list-item">
@@ -13,13 +13,13 @@
         <p class="basket__list-name">@@name</p>
         <p class="basket__list-characteristic">@@characteristic</p>
         <p class="basket__list-stock">Коледино WB</p>
-        <p class="basket__list-provider">@@provider <span class="iconAttention"></span></p>
+        <p class="basket__list-provider">@@provider <span class="@@classProvider"></span></p>
       </div>
       <div class="basket__list-count">
         <div class="count">
-          <button class="count__btnMinus" type="button"></button>
+          <button class="count__btnMinus count__btn btnDisabled" data-direction="minus" disabled type="button"></button>
           <input class="count__number" type="text" maxlength="2" min="1" value="1">
-          <button class="count__btnPlus" type="button"></button>
+          <button class="count__btnPlus count__btn" data-direction="plus" type="button"></button>
         </div>
         <p class="quantity">@@quantity</p>
         <div class="icon">
@@ -30,6 +30,16 @@
       <div class="basket__list-price">
         <p class="basket__list-newPrice @@newPriceFontSize">@@newPrice <span class="basket__list-unit">сом</span></p>
         <p class="basket__list-oldPrice">@@oldPrice сом</p>
+        <div class="basket__hoverPrice">
+          <div class="basket__hoverPrice-wrapper">
+            <p class="basket__hoverPrice-title">Скидка 55%</p>
+            <p class="basket__hoverPrice-text">−300 сом</p>
+          </div>
+          <div class="basket__hoverPrice-wrapper">
+            <p class="basket__hoverPrice-title">Скидка покупателя 10%</p>
+            <p class="basket__hoverPrice-text">−30 сом</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
