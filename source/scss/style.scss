@@ -1082,10 +1082,30 @@
   }
 
   &__img {
-    background-image: url(../img/deliveryProduct.png);
+    display: flex;
+    gap: 8px;
+  }
+
+  &__1img {
+    background-image: url(../img/t-shirt-mini.jpg);
     background-repeat: no-repeat;
-    background-position-y: -9px;
-    width: 141px;
+    width: 40px;
+    height: 56px;
+    margin-bottom: 16px;
+  }
+
+  &__2img {
+    background-image: url(../img/case-mini.jpg);
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 56px;
+    margin-bottom: 16px;
+  }
+
+  &__3img {
+    background-image: url(../img/pencils-mini.jpg);
+    background-repeat: no-repeat;
+    width: 40px;
     height: 56px;
     margin-bottom: 16px;
   }
@@ -1219,13 +1239,15 @@
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
 
     &::before {
       content: '';
       background-image: url(../img/mir.svg);
       display: inline-block;
-      width: 30px;
-      height: 10px;
+      width: 32px;
+      height: 24px;
       margin-right: 10px;
     }
   }
@@ -1272,10 +1294,11 @@
   &__form {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+    row-gap: 40px;
 
     @media (max-width: 1023px) {
-      gap: 48px;
+      row-gap: 48px;
     }
   }
 
@@ -1283,11 +1306,13 @@
     display: flex;
     flex-direction: row;
     align-items: end;
-    gap: 24px;
+    column-gap: 24px;
 
     @media (max-width: 1023px) {
       flex-direction: column;
-      gap: 48px;
+      justify-content: space-between;
+      gap: 0;
+      row-gap: 48px;
     }
 
     &-custom {
@@ -1295,22 +1320,20 @@
       flex-direction: column;
     }
 
-    &-phone {
+    &-label {
       display: flex;
       flex-direction: column;
-
-      @media (max-width: 1023px) {
-        margin-top: -21px;
-      }
     }
   }
 
   &__label {
+    display: none;
+    position: absolute;
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
     color: #9797AF;
-    padding-bottom: 5px;
+    margin-top: -20px;
   }
 
   &__input {
@@ -1347,6 +1370,10 @@
 
 .inputWidth {
   width: 338px;
+
+  @media (max-width: 1399px) {
+    width: 283px;
+  }
 
   @media (max-width: 1023px) {
     width: 288px;
@@ -1510,13 +1537,15 @@
 
   &__card {
     margin-top: 4px;
+    display: flex;
+    align-items: center;
 
     &::before {
       content: '';
       background-image: url(../img/mir.svg);
       display: inline-block;
-      width: 30px;
-      height: 10px;
+      width: 32px;
+      height: 24px;
       margin-right: 10px;
     }
   }
@@ -1598,6 +1627,33 @@
       background-color: #CB11AB;
       background-image: url(../img/checkbox.svg);
     }
+  }
+}
+
+.recipient__inputBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.error .recipient__input {
+  border-bottom: 1px solid #F55123;
+  color: #F55123;
+}
+
+.errorLabel {
+  position: absolute;
+  margin-top: 30px;
+  color: #F55123;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+
+  @media (max-width: 1399px) {
+    width: 176px;
+  }
+
+  @media (max-width: 1023px) {
+    width: max-content;
   }
 }
 
@@ -1768,4 +1824,408 @@
     }
   }
 }
+
+/*
+  formPayment
+*/
+
+.modal {
+  position: fixed;
+  background-color: rgba(5, 0, 10, 0.3);
+  cursor: pointer;
+  overflow-y: auto;
+  inset: 0;
+  z-index: 100;
+}
+
+.formPayment {
+  @media (max-width: 1023px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    margin: auto;
+    width: 400px;
+    height: 408px;
+    border-radius: 16px;
+    padding: 16px 24px 24px 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    cursor: default;
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      padding: 16px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  &__main {
+    height: 267px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__card {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    &-mir {
+      display: inline-block;
+      background-image: url(../img/mir.svg);
+      width: 32px;
+      margin-right: 4px;
+      height: 24px;
+    }
+
+    &-visa {
+      display: inline-block;
+      background-image: url(../img/visa.svg);
+      width: 32px;
+      height: 24px;
+      margin-right: 4px;
+    }
+
+    &-master {
+      display: inline-block;
+      background-image: url(../img/master.svg);
+      width: 32px;
+      height: 24px;
+      margin-right: 4px;
+    }
+
+    &-maestro {
+      display: inline-block;
+      background-image: url(../img/maestro.svg);
+      width: 32px;
+      height: 24px;
+      margin-right: 4px;
+    }
+  }
+
+  &__btnClose {
+    background: none;
+    border: none;
+    background-image: url(../img/btnClose.svg);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+  }
+
+  &__button {
+    width: 164px;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    background-color: #CB11AB;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    transition: .3s ease;
+
+    &:hover {
+      background-color: #e313bf;;
+    }
+
+    @media (max-width: 1023px) {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &+.formPayment__label {
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+
+    &+.formPayment__label::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url(../img/radio.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 8px;
+      cursor: pointer;
+    }
+
+    &:checked+.formPayment__label::before {
+      width: 20px;
+      height: 20px;
+      background-image: url(../img/radioCheck.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      margin-right: 8px;
+    }
+  }
+}
+
+/*
+  formDelivery
+*/
+
+.formDelivery {
+
+  @media (max-width: 1023px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    margin: auto;
+    width: 500px;
+    height: 408px;
+    border-radius: 16px;
+    padding: 16px 24px 24px 24px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 20px rgba(0,0,0,.2);
+    cursor: default;
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      height: 100%;
+      border-radius: 0;
+      padding: 16px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  &__main {
+    height: 207px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (max-width: 1023px) {
+      height: max-content;
+      margin-bottom: 111px;
+    }
+
+    &-title {
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 16px;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  &__method {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 24px;
+    height: 36px;
+
+    &-text {
+      display: block;
+      font-weight: 700;
+      font-size: 13px;
+      line-height: 16px;
+      width: 100%;
+      text-align: center;
+      padding-top: 8px;
+      padding-bottom: 10px;
+      border: 2px solid rgba(203, 17, 171, 0.15);
+      background: none;
+      border-radius: 20px;
+    }
+
+    &-radio {
+      display: none;
+      z-index: -1;
+      opacity: 0;
+
+      &:checked ~ .formDelivery__method-text {
+        border: 2px solid #CB11AB;
+      }
+    }
+
+    &-label {
+      display: block;
+      width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  &__address {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
+
+  &__btnDelete {
+    border: none;
+    background: none;
+    background-image: url(../img/delete.svg);
+    background-repeat: no-repeat;
+    width: 20px;
+    height: 20px;
+    opacity: .5;
+
+    &:hover {
+      background-image: url(../img/hoverBasket.svg);
+      opacity: 1;
+    }
+  }
+
+  &__spanMobile {
+    display: none;
+
+    @media (max-width: 1023px) {
+      display: block;
+      color: #A0A0A4;
+      font-size: 13px;
+      line-height: 16px;
+      font-weight: 400;
+      margin-left: 28px;
+
+      &-number {
+        color: #000000;
+        margin-right: 8px;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        background-image: url(../img/star.svg);
+        background-repeat: no-repeat;
+        background-position: center 4px;
+        margin-right: 4px;
+        width: 12px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__label {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 1023px) {
+      width: 100%;
+      padding-left: 28px;
+    }
+  }
+
+  &__btnClose {
+    background: none;
+    border: none;
+    background-image: url(../img/btnClose.svg);
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+  }
+
+  &__button {
+    width: 164px;
+    height: 44px;
+    border: none;
+    border-radius: 8px;
+    background-color: #CB11AB;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 700;
+    transition: .3s ease;
+
+    @media (max-width: 1023px) {
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: #e313bf;;
+    }
+  }
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+
+    &+.formDelivery__label {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &+.formDelivery__label::before {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background-image: url(../img/radio.svg);
+      background-repeat: no-repeat;
+      cursor: pointer;
+      margin-right: 8px;
+
+      @media (max-width: 1023px) {
+        position: absolute;
+        left: 16px;
+      }
+    }
+
+    &:checked+.formDelivery__label::before {
+      width: 20px;
+      height: 20px;
+      background-image: url(../img/radioCheck.svg);
+      background-repeat: no-repeat;
+      margin-right: 8px;
+    }
+  }
+}
+
 

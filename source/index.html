@@ -59,7 +59,7 @@
                     <label class="basket__label" for="Choose all">Выбрать все</label>
                   </div>
                   <div class="basket__summaryText">
-                    <p class="basket__text">3 товара · 2 100 063 сом</p>
+                    <p class="basket__text"><span class="basket__quantity">3 товара</span> · <span class="basket__summary"></span></p>
                   </div>
                   <button class="buttonHide hideBasket"></button>
                 </div>
@@ -75,7 +75,9 @@
                     "oldPrice": "1051",
                     "id": "t-shirt",
                     "for": "t-shirt",
-                    "classProvider": "providerWB"
+                    "classProvider": "providerWB",
+                    "data": "522",
+                    "sale": "1051"
                   })
                   @@include('blocks/product.html', {
                     "src": "./img/case.jpg",
@@ -84,12 +86,14 @@
                     "characteristic": "Цвет: прозрачный",
                     "provider": "OOO Мегапрофстиль",
                     "quantity": " ",
-                    "newPrice": "2&thinsp;100&thinsp;047",
-                    "oldPrice": "2 300 047",
+                    "newPrice": "2100047",
+                    "oldPrice": "2300047",
                     "newPriceFontSize": "newPriceFontSize",
                     "id": "case",
                     "for": "case",
-                    "classProvider": "providerM"
+                    "classProvider": "providerM",
+                    "data": "2100047",
+                    "sale": "2300047"
                   })
                   @@include('blocks/product.html', {
                     "src": "./img/pencils.jpg",
@@ -102,7 +106,9 @@
                     "oldPrice": "950",
                     "id": "pencils",
                     "for": "pencils",
-                    "classProvider": "providerWB"
+                    "classProvider": "providerWB",
+                    "data": "494",
+                    "sale": "950"
                   })
                 </div>
               </div>
@@ -136,7 +142,7 @@
             <div class="delivery">
               <div class="delivery__header">
                 <h2 class="delivery__title">Способ доставки</h2>
-                <button class="buttonChange">Изменить</button>
+                <button class="buttonChange btnFormDelivery">Изменить</button>
               </div>
               <div class="delivery__content">
                 <div class="delivery__address">
@@ -152,7 +158,11 @@
                 </div>
                 <div class="delivery__date">
                   <span class="delivery__text">5—6 февраля</span>
-                  <div class="delivery__img"></div>
+                  <div class="delivery__img">
+                    <div class="delivery__1img"></div>
+                    <div class="delivery__2img"></div>
+                    <div class="delivery__3img"></div>
+                  </div>
                 </div>
                 <div class="delivery__date">
                   <span class="delivery__text">7—8 февраля</span>
@@ -167,7 +177,7 @@
             <div class="payment">
               <div class="payment__header">
                 <h2 class="payment__title">Способ оплаты</h2>
-                <button class="buttonChange marginButtonChange">Изменить</button>
+                <button class="buttonChange marginButtonChange btnFormPayment">Изменить</button>
               </div>
               <p class="payment__card">1234 56•• •••• 1234&nbsp;&nbsp;&nbsp;01/30</p>
               <p class="payment__text">Спишем оплату с карты при получении</p>
@@ -176,18 +186,40 @@
               <h2 class="recipient__title">Получатель</h2>
               <form class="recipient__form">
                 <div class="recipient__wrapper">
-                  <input class="recipient__input inputWidth" placeholder="Имя" type="text"/>
-                  <input class="recipient__input inputWidth" placeholder="Фамилия" type="text"/>
+                  <div class="recipient__wrapper-label">
+                    <label class="recipient__label" for="name">Имя</label>
+                    <div class="recipient__inputBox">
+                      <input data-type="name" class="recipient__input inputWidth" placeholder="Имя" type="text"/>
+                    </div>
+                  </div>
+                  <div class="recipient__wrapper-label">
+                    <label class="recipient__label" for="surname">Фамилия</label>
+                    <div class="recipient__inputBox">
+                      <input data-type="surname" class="recipient__input inputWidth" placeholder="Фамилия" type="text"/>
+                    </div>
+                  </div>
                 </div>
                 <div class="recipient__wrapper">
-                  <input class="recipient__input" placeholder="Почта" type="text"/>
-                  <div class="recipient__wrapper-phone">
+                  <div class="recipient__wrapper-label">
+                    <label class="recipient__label" for="email">Электронная почта</label>
+                    <div class="recipient__inputBox">
+                      <input data-type="email" class="recipient__input" placeholder="Почта" type="email"/>
+                    </div>
+                  </div>
+                  <div class="recipient__wrapper-label">
                     <label class="recipient__label" for="phone">Телефон</label>
-                    <input class="recipient__input" id="phone" type="text"/>
+                    <div class="recipient__inputBox">
+                      <input data-type="phone" data-format="+* *** *** ** **" class="recipient__input" placeholder="Телефон" id="phone" maxlength="30" type="tel"/>
+                    </div>
                   </div>
                   <div class="recipient__wrapper-custom">
-                    <input class="recipient__input" placeholder="ИНН" type="text"/>
-                    <span class="recipient__span">Для таможенного оформления</span>
+                    <div class="recipient__wrapper-label">
+                      <label class="recipient__label" for="document">ИНН для таможни</label>
+                      <div class="recipient__inputBox">
+                        <input data-type="number" class="recipient__input" placeholder="ИНН" type="number"/>
+                      </div>
+                      <span class="recipient__span">Для таможенного оформления</span>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -197,16 +229,16 @@
         <div class="summary">
           <div class="summary__header">
             <h2 class="summary__title">Итого</h2>
-            <span class="summary__title">2 101 063<span class="summary__title-unit"> сом</span></span>
+            <span class="summary__title sum-js"></span>
           </div>
           <div class="summary__info">
             <div class="summary__info-price">
-              <span class="summary__text">203 товара</span>
-              <span class="summary__text">2 302 048 сом</span>
+              <span class="summary__text quantity-js">3 товара</span>
+              <span class="summary__text oldPrice-js"></span>
             </div>
             <div class="summary__info-sale">
               <span class="summary__text">Скидка</span>
-              <span class="summary__text">−200 985 сом</span>
+              <span class="summary__text sale-js"></span>
             </div>
             <div class="summary__info-delivery">
               <span class="summary__text">Доставка</span>
@@ -216,7 +248,7 @@
           <div class="summary__delivery">
             <div class="summary__wrapper">
               <span class="summary__subtitle">Доставка в пункт выдачи</span>
-              <button class="summary__btnChange"></button>
+              <button class="summary__btnChange btnFormDelivery"></button>
             </div>
             <span class="summary__span">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
             <span class="summary__span colorTextPink">5-8 фев</span>
@@ -228,7 +260,7 @@
           <div class="summary__payment">
             <div class="summary__wrapper">
               <span class="summary__subtitle">Оплата картой</span>
-              <button class="summary__btnChange"></button>
+              <button class="summary__btnChange btnFormPayment"></button>
             </div>
             <span class="summary__span summary__card">1234 12•• •••• 1234</span>
           </div>
@@ -239,7 +271,7 @@
             </div>
             <span class="summary__span">Спишем оплату с карты при получении</span>
           </div>
-          <button class="summary__button">Заказать</button>
+          <button class="summary__button" type="submit">Заказать</button>
           <div class="summary__agreement">
             <span class="summary__span widthAgreement">Соглашаюсь <span class="borderBottom">с правилами пользования торговой площадкой</span> и <span class="borderBottom">возврата</span></span>
           </div>
@@ -266,7 +298,82 @@
         <span class="mobileMenu__link-profile"></span>
       </a>
     </div>
+    <div class="modal formPayment">
+        <div class="formPayment__wrapper">
+          <div class="formPayment__header">
+            <h2 class="formPayment__title">Способ оплаты</h2>
+            <button class="formPayment__btnClose"></button>
+          </div>
+          <div class="formPayment__main">
+            <div class="formPayment__card">
+              <input class="formPayment__input" type="radio" id="mir" name="card" checked>
+              <label class="formPayment__label" for="mir"><span class="formPayment__label-mir"></span>1234 56•• •••• 1234</label>
+            </div>
+            <div class="formPayment__card">
+              <input class="formPayment__input" type="radio" id="visa" name="card">
+              <label class="formPayment__label" for="visa"><span class="formPayment__label-visa"></span>1234 56•• •••• 1234</label>
+            </div>
+            <div class="formPayment__card">
+              <input class="formPayment__input" type="radio" id="master" name="card">
+              <label class="formPayment__label" for="master"><span class="formPayment__label-master"></span>1234 56•• •••• 1234</label>
+            </div>
+            <div class="formPayment__card">
+              <input class="formPayment__input" type="radio" id="maestro" name="card">
+              <label class="formPayment__label" for="maestro"><span class="formPayment__label-maestro"></span>1234 56•• •••• 1234</label>
+            </div>
+          </div>
+          <button class="formPayment__button">Выбрать</button>
+        </div>
+    </div>
+    <div class="modal formDelivery">
+      <div class="formDelivery__wrapper">
+        <div class="formDelivery__header">
+          <h2 class="formDelivery__title">Способ доставки</h2>
+          <button class="formDelivery__btnClose"></button>
+        </div>
+        <div class="formDelivery__method">
+          <label class="formDelivery__method-label" for="place">
+            <input class="formDelivery__method-radio" type="radio" id="place" name="method" checked>
+            <span class="formDelivery__method-text">В пункт выдачи</span>
+          </label>
+          <label class="formDelivery__method-label" for="courier">
+            <input class="formDelivery__method-radio" type="radio" id="courier" name="method">
+            <span class="formDelivery__method-text">Курьером</span>
+          </label>
+        </div>
+        <div class="formDelivery__main">
+          <span class="formDelivery__main-title">Мои адреса</span>
+          <div class="formDelivery__address">
+            <div class="formDelivery__address-wrapper">
+              <input class="formDelivery__input" type="radio" id="address1" name="address" checked>
+              <label class="formDelivery__label" for="address1">Бишкек, улица Табышалиева, 57</label>
+              <span class="formDelivery__spanMobile">Пункт выдачи</span>
+            </div>
+            <button class="formDelivery__btnDelete"></button>
+          </div>
+          <div class="formDelivery__address">
+            <div class="formDelivery__address-wrapper">
+              <input class="formDelivery__input" type="radio" id="address2" name="address">
+              <label class="formDelivery__label" for="address2">Бишкек, улица Жукеева-Пудовкина, 77/1</label>
+              <span class="formDelivery__spanMobile"><span class="formDelivery__spanMobile-number">4.99</span>Пункт выдачи</span>
+            </div>
+            <button class="formDelivery__btnDelete"></button>
+          </div>
+          <div class="formDelivery__address">
+            <div class="formDelivery__address-wrapper">
+              <input class="formDelivery__input" type="radio" id="address3" name="address">
+              <label class="formDelivery__label" for="address3">Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1</label>
+              <span class="formDelivery__spanMobile"><span class="formDelivery__spanMobile-number">4.99</span>Пункт выдачи</span>
+            </div>
+            <button class="formDelivery__btnDelete"></button>
+          </div>
+        </div>
+        <button class="formDelivery__button">Выбрать</button>
+      </div>
+    </div>
     <script src="js/app.js" defer></script>
     <script src="js/script.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/dynamic.js"></script>
   </body>
 </html>
