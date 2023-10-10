@@ -1,13 +1,14 @@
-<div class="basket__list">
+<div class="basket__list active @@productNumber">
   <div class="basket__wrapperCheckbox marginCheckbox mobileCheckbox">
-    <input class="basket__input input-js" id="@@id" type="checkbox" checked />
+    <input class="basket__input input-js" id="@@id" type="checkbox" data-number="@@dataNumber" data-action="check" checked />
     <label class="basket__label" for="@@for"></label>
   </div>
   <div class="basket__list-item">
     <div class="basket__list-info">
       <picture>
         <source srcset="@@src320" media="(max-width: 1023px)" width="80" height="106">
-        <img class="basket__list-img" src="@@src" alt="t-shirt" width="72" height="96">
+        <source srcset="@@src1024" media="(max-width: 1399px)" width="80" height="106">
+        <img class="basket__list-img" src="@@src" alt="@@alt" width="72" height="96">
       </picture>
       <div class="basket__list-text">
         <p class="basket__list-name">@@name</p>
@@ -18,17 +19,17 @@
       <div class="basket__list-count">
         <div class="count" data-price="@@data" data-sale="@@sale">
           <button class="count__btnMinus count__btn btnDisabled" data-direction="minus" disabled type="button"></button>
-          <input class="count__number" type="text" maxlength="2" value="1">
+          <input class="count__number" type="text" maxlength="3" value="1">
           <button class="count__btnPlus count__btn" data-direction="plus" type="button"></button>
         </div>
         <p class="quantity">@@quantity</p>
         <div class="icon">
-          <button class="icon__like"></button>
-          <button class="icon__delete"></button>
+          <button class="icon__like" data-action="like"></button>
+          <button class="icon__delete" data-action="delete"></button>
         </div>
       </div>
       <div class="basket__list-price">
-        <p class="basket__list-newPrice @@newPriceFontSize">@@newPrice <span class="basket__list-unit">сом</span></p>
+        <p class="basket__list-newPrice @@newPriceFontSize" id="price">@@newPrice <span class="basket__list-unit">сом</span></p>
         <p class="basket__list-oldPrice">@@oldPrice сом</p>
         <div class="basket__hoverPrice">
           <div class="basket__hoverPrice-wrapper">

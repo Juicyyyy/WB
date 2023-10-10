@@ -39,7 +39,7 @@
           </div>
           <div class="header__icon">
             <a class="header__link" href="/">
-              <span class="header__link-basket"></span>
+              <span class="header__link-basket" id="basket"></span>
               Корзина
             </a>
           </div>
@@ -55,7 +55,7 @@
               <div class="basket__wrapper">
                 <div class="basket__wrapperButton borderCheckbox">
                   <div class="basket__wrapperCheckbox">
-                    <input class="basket__input" id="Choose-all" type="checkbox" name="Choose-all" checked />
+                    <input class="basket__input" id="Choose-all" type="checkbox" name="Choose-all" data-action="check" checked />
                     <label class="basket__label" for="Choose-all">Выбрать все</label>
                   </div>
                   <div class="basket__summaryText">
@@ -63,10 +63,12 @@
                   </div>
                   <button class="buttonHide hideBasket"></button>
                 </div>
-                <div class="basket__wrapperList">
+                <div class="basket__wrapperList" id="productList">
                   @@include('blocks/product.html', {
-                    "src": "./img/t-shirt.jpg",
-                    "src320": "./img/t-shirt_320.jpg",
+                    "src": "./img/t-shirt-2x.png",
+                    "src1024": "./img/t-shirt.png, ./img/t-shirt-2x.png 2x",
+                    "src320": "./img/t-shirt_320.png, ./img/t-shirt_320-2x.png 2x",
+                    "alt": "t-shirt",
                     "name": "Футболка UZcotton мужская",
                     "characteristic": "Цвет: белый&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Размер: 56",
                     "provider": "OOO Вайлдберриз",
@@ -77,11 +79,15 @@
                     "for": "t-shirt",
                     "classProvider": "providerWB",
                     "data": "522",
-                    "sale": "1051"
+                    "sale": "1051",
+                    "dataNumber": "1",
+                    "productNumber": "1"
                   })
                   @@include('blocks/product.html', {
-                    "src": "./img/case.jpg",
-                    "src320": "./img/case_320.jpg",
+                    "src": "./img/case-2x.png",
+                    "src1024": "./img/case.png, ./img/case-2x.png 2x",
+                    "src320": "./img/case_320.png, ./img/case_320-2x.png 2x",
+                    "alt": "case",
                     "name": "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
                     "characteristic": "Цвет: прозрачный",
                     "provider": "OOO Мегапрофстиль",
@@ -93,11 +99,15 @@
                     "for": "case",
                     "classProvider": "providerM",
                     "data": "2100047",
-                    "sale": "2300047"
+                    "sale": "2300047",
+                    "dataNumber": "2",
+                    "productNumber": "2"
                   })
                   @@include('blocks/product.html', {
-                    "src": "./img/pencils.jpg",
-                    "src320": "./img/pencils_320.jpg",
+                    "src": "./img/pencils-2x.png",
+                    "src1024": "./img/pencils.png, ./img/pencils-2x.png 2x",
+                    "src320": "./img/pencils_320.png, ./img/pencils_320-2x.png 2x",
+                    "alt": "pencils",
                     "name": "Карандаши цветные Faber-Castell &quot;Замок&quot;, набор 24 цвета, заточенные, шестигранные, Faber-Castell",
                     "characteristic": " ",
                     "provider": "OOO Вайлдберриз",
@@ -108,7 +118,9 @@
                     "for": "pencils",
                     "classProvider": "providerWB",
                     "data": "494",
-                    "sale": "950"
+                    "sale": "950",
+                    "dataNumber": "3",
+                    "productNumber": "3"
                   })
                 </div>
               </div>
@@ -120,20 +132,26 @@
               </div>
               <div class="absent__product">
                 @@include('blocks/product-item.html', {
-                  "src": "./img/t-shirt.jpg",
-                  "src320": "./img/t-shirt_320.jpg",
+                  "src": "./img/t-shirt-2x.png",
+                  "src1024": "./img/t-shirt.png, ./img/t-shirt-2x.png 2x",
+                  "src320": "./img/t-shirt_320.png, ./img/t-shirt_320-2x.png 2x",
+                  "alt": "t-shirt",
                   "name": "Футболка UZcotton мужская",
                   "characteristic": "Цвет: белый&nbsp;&nbsp;&nbsp;&nbsp;Размер: 56",
                 })
                 @@include('blocks/product-item.html', {
-                  "src": "./img/case.jpg",
-                  "src320": "./img/case_320.jpg",
+                  "src": "./img/case-2x.png",
+                  "src1024": "./img/case.png, ./img/case-2x.png 2x",
+                  "src320": "./img/case_320.png, ./img/case_320-2x.png 2x",
+                  "alt": "case",
                   "name": "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
                   "characteristic": "Цвет: прозрачный",
                 })
                 @@include('blocks/product-item.html', {
-                  "src": "./img/pencils.jpg",
-                  "src320": "./img/pencils_320.jpg",
+                  "src": "./img/pencils-2x.png",
+                  "src1024": "./img/pencils.png, ./img/pencils-2x.png 2x",
+                  "src320": "./img/pencils_320.png, ./img/pencils_320-2x.png 2x",
+                  "alt": "pencils",
                   "name": "Карандаши цветные Faber-Castell &quot;Замок&quot;, набор 24 цвета, заточенные, шестигранные, Faber-Castell",
                   "characteristic": " ",
                 })
@@ -159,18 +177,42 @@
                 <div class="delivery__date">
                   <span class="delivery__text">5—6 февраля</span>
                   <div class="delivery__img">
-                    <div class="delivery__1img"></div>
-                    <div class="delivery__2img"></div>
-                    <div class="delivery__3img"></div>
+                    <div class="delivery__1img">
+                      <picture>
+                        <source srcset="./img/t-shirt-mini.png, ./img/t-shirt-mini-2x.png 2x" media="(max-width: 1399px)" width="40" height="56">
+                        <img class="delivery__img" src="./img/t-shirt-mini-2x.png" alt="t-shirt" width="40" height="56">
+                      </picture>
+                      <span class="countProduct"></span>
+                    </div>
+                    <div class="delivery__2img">
+                      <picture>
+                        <source srcset="./img/case-mini.png, ./img/case-mini-2x.png 2x" media="(max-width: 1399px)" width="40" height="56">
+                        <img class="delivery__img" src="./img/case-mini-2x.png" alt="case" width="40" height="56">
+                      </picture>
+                      <span class="countProduct"></span>
+                    </div>
+                    <div class="delivery__3img">
+                      <picture>
+                        <source srcset="./img/pencils-mini.png, ./img/pencils-mini-2x.png 2x" media="(max-width: 1399px)" width="40" height="56">
+                        <img class="delivery__img" src="./img/pencils-mini-2x.png" alt="pencils" width="40" height="56">
+                      </picture>
+                      <span class="countProduct"></span>
+                    </div>
                   </div>
                 </div>
-                <div class="delivery__date">
+                <div class="delivery__date displayNone deliveryDate">
                   <span class="delivery__text">7—8 февраля</span>
-                  <div class="delivery__product"></div>
+                  <div class="delivery__product">
+                    <picture>
+                      <source srcset="./img/case-mini.png, ./img/case-mini-2x.png 2x" media="(max-width: 1399px)" width="40" height="56">
+                      <img class="delivery__img" src="./img/case-mini-2x.png" alt="case" width="40" height="56">
+                    </picture>
+                    <span class="countProduct"></span>
+                  </div>
                 </div>
                 <div class="delivery__priceShipping">
                   <span class="priceShipping-icon sizeIcon"></span>
-                  <span class="delivery__priceShipping-text">Обратная доставка товаров на склад при отказе — <span class="deliveryColorText">бесплатно</span></span>
+                  <span class="delivery__priceShipping-text">Обратная доставка товаров на склад при отказе — <span class="deliveryColorText">бесплатно</span></span>
                 </div>
               </div>
             </div>
@@ -179,7 +221,7 @@
                 <h2 class="payment__title">Способ оплаты</h2>
                 <button class="buttonChange marginButtonChange btnFormPayment">Изменить</button>
               </div>
-              <p class="payment__card">1234 56•• •••• 1234&nbsp;&nbsp;&nbsp;01/30</p>
+              <p class="payment__card"><span class="payment__card-mir"></span>1234 56•• •••• 1234&nbsp;&nbsp;&nbsp;01/30</p>
               <p class="payment__text">Спишем оплату с карты при получении</p>
             </div>
             <div class="recipient">
@@ -247,22 +289,22 @@
           </div>
           <div class="summary__delivery">
             <div class="summary__wrapper">
-              <span class="summary__subtitle">Доставка в пункт выдачи</span>
+              <span class="summary__subtitle summary__method">Доставка в пункт выдачи</span>
               <button class="summary__btnChange btnFormDelivery"></button>
             </div>
-            <span class="summary__span">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
-            <span class="summary__span colorTextPink">5-8 фев</span>
+            <span class="summary__span summary__adress">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+          <span class="summary__span colorTextPink">5–8 фев</span>
           </div>
           <div class="summary__deliveryFree">
             <span class="priceShipping-icon"></span>
-            <span class="summary__span">Обратная доставка товаров <span class="transferLine">на склад при отказе — <span class="deliveryColorText">бесплатно</span></span></span>
+            <span class="summary__span">Обратная доставка товаров <span class="transferLine">на склад при отказе — <span class="deliveryColorText">бесплатно</span></span></span>
           </div>
           <div class="summary__payment">
             <div class="summary__wrapper">
               <span class="summary__subtitle">Оплата картой</span>
               <button class="summary__btnChange btnFormPayment"></button>
             </div>
-            <span class="summary__span summary__card">1234 12•• •••• 1234</span>
+            <span class="summary__span summary__card"><span class="summary__card-mir"></span>1234 12•• •••• 1234</span>
           </div>
           <div class="summary__checkbox">
             <div class="summary__checkbox-wrapper">
@@ -289,7 +331,7 @@
         <span class="mobileMenu__link-catalog"></span>
       </a>
       <a class="mobileMenu__link" href="/">
-        <span class="mobileMenu__link-basket"></span>
+        <span class="mobileMenu__link-basket mobileBasket"></span>
       </a>
       <a class="mobileMenu__link" href="/">
         <span class="mobileMenu__link-favorites"></span>
@@ -298,11 +340,11 @@
         <span class="mobileMenu__link-profile"></span>
       </a>
     </div>
-    <div class="modal formPayment">
+    <form class="modal formPayment">
         <div class="formPayment__wrapper">
           <div class="formPayment__header">
             <h2 class="formPayment__title">Способ оплаты</h2>
-            <button class="formPayment__btnClose"></button>
+            <button class="formPayment__btnClose" type="button"></button>
           </div>
           <div class="formPayment__main">
             <div class="formPayment__card">
@@ -322,14 +364,14 @@
               <label class="formPayment__label" for="maestro"><span class="formPayment__label-maestro"></span>1234 56•• •••• 1234</label>
             </div>
           </div>
-          <button class="formPayment__button">Выбрать</button>
+          <button class="formPayment__button" type="submit">Выбрать</button>
         </div>
-    </div>
-    <div class="modal formDelivery">
+    </form>
+    <form class="modal formDelivery">
       <div class="formDelivery__wrapper">
         <div class="formDelivery__header">
           <h2 class="formDelivery__title">Способ доставки</h2>
-          <button class="formDelivery__btnClose"></button>
+          <button class="formDelivery__btnClose" type="button"></button>
         </div>
         <div class="formDelivery__method">
           <label class="formDelivery__method-label" for="place">
@@ -368,12 +410,12 @@
             <button class="formDelivery__btnDelete"></button>
           </div>
         </div>
-        <button class="formDelivery__button">Выбрать</button>
+        <button class="formDelivery__button" type="submit">Выбрать</button>
       </div>
-    </div>
-    <script src="js/app.js" defer></script>
+    </form>
     <script src="js/script.js"></script>
     <script src="js/form.js"></script>
     <script src="js/dynamic.js"></script>
+    <script src="js/popup.js"></script>
   </body>
 </html>

@@ -24,6 +24,7 @@
 .header {
   &__wrapper {
     display: flex;
+    justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 40px;
     margin-left: 24px;
@@ -55,9 +56,9 @@
   }
 
   &__nav {
-    width: 170px;
+    width: 173px;
     display: flex;
-    margin-right: 32px;
+    margin-right: 30px;
 
     @media (max-width: 1023px) {
       margin: 0;
@@ -70,9 +71,9 @@
     font-size: 24px;
     line-height: 24px;
     color: #FFFFFF;
-    width: 108px;
+    width: 109px;
     text-transform: uppercase;
-    letter-spacing: .5px;
+    letter-spacing: .8px;
 
     @media (max-width: 1023px) {
       font-size: 20px;
@@ -152,7 +153,7 @@
 
   &__search {
     position: relative;
-    width: 100%;
+    width: 69%;
     margin-right: 28px;
 
     @media (max-width: 1023px) {
@@ -255,6 +256,7 @@
     }
 
     &-basket {
+      position: relative;
       background-image: url(../img/basket.svg);
       background-repeat: no-repeat;
       background-position: 10px 3px;
@@ -326,6 +328,7 @@
     line-height: 36px;
     font-weight: 700;
     margin-bottom: 27px;
+    letter-spacing: -0.2px;
 
     @media (max-width: 1023px) {
       font-size: 20px;
@@ -400,7 +403,6 @@
   }
 
   &__list {
-    width: 640px;
     height: 100%;
     display: flex;
 
@@ -714,7 +716,7 @@
 }
 
 .quantity {
-  color: #FF3B30;
+  color: #F55123;
   font-size: 13px;
   line-height: 16px;
   font-weight: 400;
@@ -979,6 +981,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
+    letter-spacing: -0.2px;
 
     @media (max-width: 1023px) {
       font-size: 20px;
@@ -1087,35 +1090,23 @@
   }
 
   &__1img {
-    background-image: url(../img/t-shirt-mini.jpg);
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 56px;
     margin-bottom: 16px;
+    position: relative;
   }
 
   &__2img {
-    background-image: url(../img/case-mini.jpg);
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 56px;
     margin-bottom: 16px;
+    position: relative;
   }
 
   &__3img {
-    background-image: url(../img/pencils-mini.jpg);
-    background-repeat: no-repeat;
-    width: 40px;
-    height: 56px;
     margin-bottom: 16px;
+    position: relative;
   }
 
   &__product {
-    background-image: url(../img/deliveryCase.jpg);
-    background-repeat: no-repeat;
-    width: 41px;
-    height: 56px;
     margin-bottom: 24px;
+    position: relative;
 
     @media (max-width: 1023px) {
       margin-bottom: 0;
@@ -1226,6 +1217,7 @@
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 16px;
+    letter-spacing: -0.2px;
 
     @media (max-width: 1023px) {
       font-size: 20px;
@@ -1238,12 +1230,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    margin-bottom: 8px;
     display: flex;
     align-items: center;
 
-    &::before {
-      content: '';
+    &-mir {
       background-image: url(../img/mir.svg);
       display: inline-block;
       width: 32px;
@@ -1257,6 +1247,7 @@
     font-size: 13px;
     line-height: 16px;
     color: #9797AF;
+    margin-top: 8px;
   }
 }
 
@@ -1283,6 +1274,7 @@
     font-size: 24px;
     line-height: 32px;
     margin-bottom: 35px;
+    letter-spacing: -0.2px;
 
     @media (max-width: 1023px) {
       font-size: 20px;
@@ -1398,7 +1390,7 @@
     width: 320px;
     background-color: #F6F6FA;
     box-shadow: none;
-    padding: 30px 16px 20px 16px;
+    padding: 30px 16px 16px 16px;
   }
 
   &__header {
@@ -1410,6 +1402,7 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
+    letter-spacing: -0.2px;
 
     @media (max-width: 1023px) {
       font-size: 20px;
@@ -1427,8 +1420,7 @@
     margin-bottom: 24px;
 
     @media (max-width: 1023px) {
-      margin-top: 5px;
-      margin-bottom: 17px;
+      margin-bottom: 19px;
     }
 
     &-price {
@@ -1495,7 +1487,8 @@
 
     @media (max-width: 1023px) {
       gap: 6px;
-      margin-bottom: 13px;
+      margin-bottom: 16px;
+      background-color: #F0ECF4;
     }
   }
 
@@ -1518,6 +1511,10 @@
     flex-direction: column;
     gap: 5px;
     margin-bottom: 24px;
+
+    @media (max-width: 1023px) {
+      background-color: #F0ECF4;
+    }
   }
 
   &__wrapper {
@@ -1536,12 +1533,10 @@
   }
 
   &__card {
-    margin-top: 4px;
     display: flex;
     align-items: center;
 
-    &::before {
-      content: '';
+    &-mir {
       background-image: url(../img/mir.svg);
       display: inline-block;
       width: 32px;
@@ -1588,13 +1583,16 @@
     &:hover {
       background-color: #e313bf;
     }
+
+    @media (max-width: 1023px) {
+      margin-bottom: 12px;
+    }
   }
 
   &__label {
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
-    margin-top: 3px;
   }
 
   &__input {
@@ -1796,6 +1794,7 @@
     &-basket {
       @media (max-width: 1023px) {
         display: block;
+        position: relative;
         background-image: url(../img/basket320.svg);
         background-repeat: no-repeat;
         width: 28px;
@@ -1882,6 +1881,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 28px;
+    letter-spacing: -0.2px;
   }
 
   &__card {
@@ -2053,6 +2053,7 @@
     font-weight: 700;
     font-size: 20px;
     line-height: 28px;
+    letter-spacing: -0.2px;
   }
 
   &__method {
@@ -2228,4 +2229,46 @@
   }
 }
 
+.countBasket {
+  position: absolute;
+  left: 32px;
+  top: -4px;
+  width: 16px;
+  height: 16px;
+  background-color: #F55123;
+  border-radius: 16px;
+  font-size: 10px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: 700;
+  color: #FFFFFF;
+
+  @media (max-width: 1023px) {
+    left: 19px;
+  }
+}
+
+.countProduct {
+  position: absolute;
+  top: -8px;
+  left: 32px;
+  max-width: 26px;
+  min-width: 16px;
+  padding-left: 4px;
+  padding-right: 4px;
+  height: 16px;
+  background-color: #F55123;
+  border-radius: 16px;
+  font-size: 10px;
+  line-height: 18px;
+  text-align: center;
+  font-weight: 700;
+  color: #FFFFFF;
+  z-index: 10;
+  opacity: 0;
+}
+
+.displayNone {
+  display: none;
+}
 

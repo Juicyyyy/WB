@@ -3,6 +3,7 @@
 
 const inputBasketAll = document.querySelector('.basket__input');
 const inputBasket = document.querySelectorAll('.input-js');
+const basketLists = document.querySelectorAll('.basket__list');
 
 inputBasketAll.addEventListener('click', () => {
   if (inputBasketAll.checked === false) {
@@ -10,28 +11,84 @@ inputBasketAll.addEventListener('click', () => {
       let input = inputBasket[index];
       input.checked = false;
     }
+    removeDelivery();
+    removeActiveProduct();
+    renderCountBasket();
+    summaryPrice();
   }
   else {
     for (let index = 0; index < inputBasket.length; index++) {
       let input = inputBasket[index];
       input.checked = true;
     }
+    addDelivery();
+    addActiveProduct();
+    renderCountBasket();
+    summaryPrice();
   }
 })
+
+function removeDelivery() {
+  const delivery = document.querySelectorAll('.delivery__date');
+  for (let index = 0; index < delivery.length; index++) {
+    let deliveryDate = delivery[index];
+    deliveryDate.classList.toggle('displayNone');
+  }
+}
+
+function addDelivery() {
+  const delivery = document.querySelectorAll('.delivery__date');
+  for (let index = 0; index < delivery.length; index++) {
+    let deliveryDate = delivery[index];
+    deliveryDate.classList.toggle('displayNone');
+  }
+}
+
+function activeProduct() {
+  for (let index = 0; index < basketLists.length; index++) {
+    let product = basketLists[index];
+    product.classList.toggle('active');
+  }
+}
+
+function addActiveProduct() {
+  for (let index = 0; index < basketLists.length; index++) {
+    let product = basketLists[index];
+    product.classList.add('active');
+  }
+}
+
+function removeActiveProduct() {
+  for (let index = 0; index < basketLists.length; index++) {
+    let product = basketLists[index];
+    product.classList.remove('active');
+  }
+}
+
+let allChecked = true;
 
 for (let index = 0; index < inputBasket.length; index++) {
   let input = inputBasket[index];
 
   input.addEventListener('click', () => {
-    if(input.checked === true) {
-      inputBasketAll.checked = true;
-    }
-    else {
-      inputBasketAll.checked = false;
-      input.classList.remove('inputActive');
-    }
+    inputBasket.forEach(function(checkbox) {
+      if (!checkbox.checked) {
+        allChecked = false;
+      }
+    });
+    checked();
   })
 }
+
+function checked() {
+  if (allChecked) {
+    inputBasketAll.checked = true;
+  } else {
+    allChecked = true;
+    inputBasketAll.checked = false;
+  }
+}
+
 
 // изменение кнопки по чекбоксу
 
