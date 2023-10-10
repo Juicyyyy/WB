@@ -28,7 +28,7 @@
     margin-top: 20px;
     margin-bottom: 40px;
     margin-left: 24px;
-    margin-right: 24px;
+    margin-right: 25px;
 
     @media (max-width: 1023px) {
       margin-top: 13px;
@@ -153,7 +153,7 @@
 
   &__search {
     position: relative;
-    width: 69%;
+    width: 100%;
     margin-right: 28px;
 
     @media (max-width: 1023px) {
@@ -278,7 +278,9 @@
   &__display {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     gap: 32px;
+    width: 100%;
 
     @media (max-width: 1023px) {
       flex-direction: column;
@@ -290,19 +292,24 @@
     height: max-content;
     margin-left: 24px;
 
+    @media (max-width: 1399px) {
+      width: 62.5%;
+    }
+
     @media (max-width: 1023px) {
       margin: 0 auto;
       margin-top: -8px;
+      width:auto;
     }
   }
 }
 
 .basket {
-  width: 891px;
+  width: 100%;
   margin-top: 10px;
 
   @media (max-width: 1399px) {
-    width: 640px;
+    width: 100%;
   }
 
   @media (max-width: 1023px) {
@@ -327,7 +334,7 @@
     font-size: 28px;
     line-height: 36px;
     font-weight: 700;
-    margin-bottom: 27px;
+    margin-bottom: 25px;
     letter-spacing: -0.2px;
 
     @media (max-width: 1023px) {
@@ -343,9 +350,10 @@
     align-items: center;
   }
 
+
   &__wrapperCheckbox {
     min-height: 24px;
-    padding-bottom: 14px;
+    padding-bottom: 16px;
   }
 
   &__wrapper {
@@ -358,6 +366,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 32px;
+    width: 100%;
 
     @media (max-width: 1023px) {
       row-gap: 10px;
@@ -435,6 +444,8 @@
   }
 
   &__list-item {
+    width: 95%;
+
     @media (max-width: 1023px) {
       width: 288px;
     }
@@ -442,6 +453,11 @@
 
   &__list-info {
     display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1399px) {
+      width: 100%;
+    }
 
     @media (max-width: 1023px) {
       flex-wrap: wrap;
@@ -655,6 +671,10 @@
   transition: .3s ease;
 }
 
+.hideBasket {
+  margin-bottom: 10px;
+}
+
 .borderCheckbox {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
@@ -698,6 +718,10 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
+
+    @media (max-width: 1023px) {
+      width: 30px;
+    }
   }
 
   &__btnMinus {
@@ -1050,10 +1074,6 @@
   &__priceShipping {
     display: flex;
 
-    @media (max-width: 1399px) {
-      gap: 8px;
-    }
-
     @media (max-width: 1023px) {
       gap: 2px;
       margin-top: 29px;
@@ -1063,7 +1083,7 @@
       font-weight: 400;
       font-size: 13px;
       line-height: 16px;
-      margin-left: 3px;
+      margin-left: 10px;
       margin-top: 2px;
 
       @media (max-width: 1023px) {
@@ -1381,9 +1401,10 @@
   z-index: 10;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
   margin-top: -2px;
+  margin-right: 24px;
 
   @media (max-width: 1399px) {
-    width: 303px;
+    width: 63%;
   }
 
   @media (max-width: 1023px) {
@@ -1402,11 +1423,12 @@
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
-    letter-spacing: -0.2px;
+    letter-spacing: -1px;
 
     @media (max-width: 1023px) {
       font-size: 20px;
       line-height: 24px;
+      letter-spacing: 0;
     }
 
     &-unit {
@@ -2250,8 +2272,8 @@
 
 .countProduct {
   position: absolute;
-  top: -8px;
-  left: 32px;
+  top: -9px;
+  left: 29px;
   max-width: 26px;
   min-width: 16px;
   padding-left: 4px;
