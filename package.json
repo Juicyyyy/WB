@@ -1,9 +1,9 @@
 {
-  "name": "dl-academy-markup-template",
+  "name": "wb",
   "version": "1.0.0",
   "private": true,
   "description": "Markup template",
-  "author": "DirectLine Development",
+  "author": "julia",
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp build",
